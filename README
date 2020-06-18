@@ -1,8 +1,0 @@
-qtstb can do the following things:
-
-
--Read stb files and display them in a QTableWidget
-	-table rows and columns can be seeked using the following method: r|c # [ENTER]
--Search stb files for a single cell value, row header or column header
--Convert stb files containing EUC-KR and SHIFT-JIS strings into equivalent STB using utf8
--Find cell values containing string "X" (coming...) ...broken for gui, only works for cli (not sure why)

@@ -9,6 +9,6 @@ TARGET = fribstb
 INCLUDEPATH += .
 
 # Input
-SOURCES += main.cpp stb.cpp stbwidget.cpp stbfunctions.cpp ../../jpkoconv/jpkoconv.cpp
+SOURCES += main.cpp stb.cpp stbwidget.cpp stbfunctions.cpp jpkoconv.cpp
 QT += widgets
 HEADERS = stbwidget.h stbglobal.h stbfunctions.h stb.h

@@ -6,7 +6,7 @@
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
-#include "../../jpkoconv/jpkoconv.h"
+#include "jpkoconv.h"
 #include "stbwidget.h"
 #include "stbfunctions.h"
 #include "stb.h"
