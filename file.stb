@@ -1,0 +1,25 @@
+FSTR[4] format_code
+    DWORD data_offset
+    DWORD rowcount
+    DWORD columncount
+     
+    :SEEK[SET] data_offset
+     
+    DWORD rowheight
+    :FOREACH( columncount + 1 )
+        WORD columnwidth
+    :ENDFOR
+     
+    :FOREACH( columncount )
+        SSTR columntitle
+    :ENDFOR
+     
+    SSTR idcolumnname
+    :FOREACH( rowcount - 1 )
+        SSTR rowdata
+    :ENDFOR
+    :FOREACH( rowcount - 1 )
+        :FOREACH( columncount - 1 )
+            SSTR celldata
+        :ENDFOR
+    :ENDFOR
