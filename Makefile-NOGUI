@@ -1,0 +1,2 @@
+all:
+	g++ -o fribstb-nogui main.cpp stb.cpp stbfunctions.cpp jpkoconv.cpp -D_NOGUI

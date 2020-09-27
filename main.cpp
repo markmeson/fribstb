@@ -1,15 +1,18 @@
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QTableWidget>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QMenu>
 #include <iostream>
 #include <cstring>
 #include <cstdio>
 #include <cstdlib>
 #include "jpkoconv.h"
-#include "stbwidget.h"
 #include "stbfunctions.h"
 #include "stb.h"
+
+#ifndef _NOGUI
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QMenu>
+#include "stbwidget.h"
+#endif
 
 using namespace std;
 
@@ -306,6 +309,8 @@ int main(int argc, char *argv[])
 
 /* ************* BEGIN QT CODE ********************** */
 
+#ifndef _NOGUI
+
 	int colw = 300;
 	int rowh = 30;
 	int winw = (colcount * colw - 150);
@@ -390,5 +395,8 @@ int main(int argc, char *argv[])
 	table->show();
 
 	app.exec();
+
+#endif 
+
 	return 0;
 }

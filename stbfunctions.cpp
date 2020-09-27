@@ -3,10 +3,9 @@
 #include <cstring>
 #include <cstdlib>
 
-//THIS IS SO BROKEN
 int search(const char *filename, int &row, int &col, int rowcount, int colcount, int dataoffset, const char *str, bool gui) {
-	if (row < 0 || col > rowcount - 1) return -1;
-	if (row < 0 || col > colcount - 1) return -1;
+	if (row < 0 || row > rowcount - 1) return -1;
+	if (col < 0 || col > colcount - 1) return -1;
 	
 	stbfile = fopen(filename, "rb");
 
@@ -18,6 +17,7 @@ int search(const char *filename, int &row, int &col, int rowcount, int colcount,
 		for(int curcol = col; curcol < colcount-1; curcol++) {
 			fread(&len, 2, 1, stbfile);
 			fread(buffer, 1, len, stbfile);
+			if(len < searchlen) continue;
 			for(int k = 0; k < searchlen; k++) {
 				if(str[k] != buffer[k]) {
 					break;
@@ -37,6 +37,7 @@ int search(const char *filename, int &row, int &col, int rowcount, int colcount,
 			}
 		}
 	}
+	return 0;
 }
 
 int getSTBValue(int getRow, int getCol, int rowcount, int colcount, int data_offset, bool newline) {
